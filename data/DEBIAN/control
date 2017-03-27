@@ -1,0 +1,6 @@
+Package: webex-browser
+Version: __VERSION__-__DATETIME__
+Architecture: i386
+Depends: libgtk-3-0, libdbus-glib-1-2, libxtst6, libxmu6, libgtk2.0-0, libpangox-1.0-0, libpangoxft-1.0-0, libxtst6, libasound2, libxv1
+Maintainer: Ivan Dzikovsky
+Description: Firefox preconfigured to works with Cisco WebEx
