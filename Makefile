@@ -1,4 +1,4 @@
-FIREFOX_URL = https://download-installer.cdn.mozilla.net/pub/firefox/releases/52.0.1esr/linux-i686/en-US/firefox-52.0.1esr.tar.bz2
+FIREFOX_URL = https://download-installer.cdn.mozilla.net/pub/firefox/releases/52.2.1esr/linux-i686/en-US/firefox-52.2.1esr.tar.bz2
 
 VERSION = 1
 DATETIME = $(shell date +%Y%m%d%H%M)
