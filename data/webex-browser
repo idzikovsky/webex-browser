@@ -3,14 +3,4 @@
 PROFILE_DIR="$HOME/.webex-browser"
 mkdir -p "$PROFILE_DIR"
 
-# Is following step needed?
-_JAVA_HOME=(/opt/webex-browser/jre1.7*)
-export JAVA_HOME=${_JAVA_HOME[0]}
-
-# Is following step needed?
-export LD_LIBRARY_PATH="$JAVA_HOME/lib/i386:$LD_LIBRARY_PATH"
-
-# Is following step needed?
-unset JAVA_TOOL_OPTIONS
-
-exec /opt/webex-browser/firefox/webex-browser --no-remote --profile "$PROFILE_DIR" $@
+exec /opt/webex-browser/firefox/firefox --no-remote --profile "$PROFILE_DIR" $@

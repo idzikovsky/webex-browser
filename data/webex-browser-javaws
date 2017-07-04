@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Ensure that libjawt.so library available
+export JRE_HOME=/opt/webex-browser/jre
+export LD_LIBRARY_PATH="$JRE_HOME/lib/i386:$LD_LIBRARY_PATH"
+
+exec /opt/webex-browser/jre/bin/javaws $@

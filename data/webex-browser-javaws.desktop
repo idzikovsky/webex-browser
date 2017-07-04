@@ -1,0 +1,9 @@
+[Desktop Entry]
+# https://askubuntu.com/a/235872
+Categories=Application;Network;
+Exec=webex-browser-javaws %u
+Icon=javaws
+MimeType=application/x-java-jnlp-file;
+Name=WebEx Browser / Java Web Start
+Terminal=false
+Type=Application
