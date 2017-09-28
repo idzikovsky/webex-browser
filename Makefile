@@ -1,4 +1,4 @@
-FIREFOX_URL = https://download-installer.cdn.mozilla.net/pub/firefox/releases/52.2.1esr/linux-i686/en-US/firefox-52.2.1esr.tar.bz2
+FIREFOX_URL = https://download-installer.cdn.mozilla.net/pub/firefox/releases/52.4.0esr/linux-i686/en-US/firefox-52.4.0esr.tar.bz2
 
 VERSION = 1
 DATETIME = $(shell date +%Y%m%d%H%M)
@@ -19,23 +19,23 @@ dist/webex-browser_$(VERSION)-$(DATETIME).deb : build/firefox/
 	cp data/webex-browser-javaws.desktop build/usr/share/applications/
 	dpkg-deb --build build/ dist/webex-browser_$(VERSION)-$(DATETIME).deb
 
-build/firefox/ : dl/firefox-*.tar.bz2 build/jre1.7*
+build/firefox/ : dl/firefox-*.tar.bz2 build/jre1.8*
 	mkdir -p build/$(PREFIX)/firefox/
 	tar -xf dl/firefox-*.tar.bz2 -C build/$(PREFIX)/firefox/ --strip-components=1
 	cp data/firefox-conf.js build/$(PREFIX)/firefox/defaults/pref/
 	mkdir -p build/$(PREFIX)/firefox/browser/plugins/
 	ln -fsr build/$(PREFIX)/jre/lib/i386/libnpjp2.so build/$(PREFIX)/firefox/browser/plugins/
 
-build/jre1.7* : dl/jre-7*.tar.gz
+build/jre1.8* : dl/jre-8*.tar.gz
 	mkdir -p build/$(PREFIX)/jre/
-	tar -xf dl/jre-7*.tar.gz -C build/$(PREFIX)/jre/ --strip-components=1
+	tar -xf dl/jre-8*.tar.gz -C build/$(PREFIX)/jre/ --strip-components=1
 
 dl/firefox-*.tar.bz2 :
 	mkdir -p dl/
 	cd dl/ && curl -O $(FIREFOX_URL)
 
-dl/jre-7*.tar.gz :
-	$(error You should download JRE 7 archive from Oracle site to ./dl/ directory manually)
+dl/jre-8*.tar.gz :
+	$(error You should download JRE 8 archive from Oracle site to ./dl/ directory manually)
 
 .PHONY: clean
 clean:
